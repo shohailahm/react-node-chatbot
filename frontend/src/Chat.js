@@ -8,7 +8,7 @@ const HOST = window.location.origin.replace(/^http/, 'ws')
 const Host=HOST.slice(0, -4) + ':3030'
 class Chat extends Component {
   state = {
-    name: 'Bob',
+    name: '',
     messages: [],
   }
    
@@ -56,6 +56,7 @@ class Chat extends Component {
             placeholder={'Enter your name...'}
             value={this.state.name}
             onChange={e => this.setState({ name: e.target.value })}
+            style={{padding:8,borderRadius:4}}
           />
         </label>
         <ChatInput
