@@ -5,7 +5,7 @@ import ChatMessage from './ChatMessage'
 const URL = 'ws://localhost:3030'
 const HOST = window.location.origin.replace(/^http/, 'ws')
   
-const Host=HOST.slice(0, -4) + '3030'
+const Host=HOST.slice(0, -4) + ':3030'
 class Chat extends Component {
   state = {
     name: 'Bob',
