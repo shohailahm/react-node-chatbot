@@ -10,10 +10,12 @@ class Chat extends Component {
     messages: [],
   }
    HOST = location.origin.replace(/^http/, 'ws')
+  
    Host=HOST+"3030"
   ws = new WebSocket(Host)
 
   componentDidMount() {
+    console.log(location);
     this.ws.onopen = () => {
       // on connecting, do nothing but log it to the console
       console.log('connected')
