@@ -1,5 +1,13 @@
 {
+  "scripts": {
+    "start": "node server.js",
+    "heroku-postbuild": "cd frontend && npm install --only=dev && npm install && npm run build"
+},
   "dependencies": {
+    "express": "^4.17.1",
     "ws": "^7.1.2"
-  }
+  },
+  "engines": {
+    "node": "10.16.0"
+}
 }
