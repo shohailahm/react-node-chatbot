@@ -6,7 +6,7 @@ var app = express();
 app.use(express.static(__dirname + 'frontend/public/index.html')); //Serves resources from public folder
 
 
-var server = app.listen(5000);
+var server = app.listen(process.env.PORT || 5000);
 const wss = new WebSocket.Server({ port: 3030 });
 
 wss.on('connection', function connection(ws) {
