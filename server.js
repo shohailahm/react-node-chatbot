@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 
 //setting middleware
-app.use(express.static(__dirname + 'frontend/public')); //Serves resources from public folder
+app.use(express.static(__dirname + 'frontend/public/index.html')); //Serves resources from public folder
 
 
 var server = app.listen(5000);
