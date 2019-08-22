@@ -3,19 +3,19 @@ import ChatInput from './ChatInput'
 import ChatMessage from './ChatMessage'
 
 const URL = 'ws://localhost:3030'
-
+const HOST = window.location.origin.replace(/^http/, 'ws')
+  
+const Host=HOST.slice(0, -4) + '3030'
 class Chat extends Component {
   state = {
     name: 'Bob',
     messages: [],
   }
-   HOST = location.origin.replace(/^http/, 'ws')
-  
-   Host=HOST+"3030"
+   
   ws = new WebSocket(Host)
 
   componentDidMount() {
-    console.log(location);
+    console.log(window.location);
     this.ws.onopen = () => {
       // on connecting, do nothing but log it to the console
       console.log('connected')
