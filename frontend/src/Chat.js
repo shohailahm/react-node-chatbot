@@ -9,8 +9,9 @@ class Chat extends Component {
     name: 'Bob',
     messages: [],
   }
-
-  ws = new WebSocket(URL)
+   HOST = location.origin.replace(/^http/, 'ws')
+   Host=HOST+"3030"
+  ws = new WebSocket(Host)
 
   componentDidMount() {
     this.ws.onopen = () => {

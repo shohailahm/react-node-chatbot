@@ -15,9 +15,7 @@ app.get('*', (req, res) => {
 
 var server = app.listen(process.env.PORT || 5000);
 
-var host = location.origin.replace(/^http/, 'ws');
-host = host + ":3030";
-const wss = new WebSocket.Server(host);
+const wss = new WebSocket.Server({ port: 3030 });
 
 wss.on('connection', function connection(ws) {
   console.log("connected");
