@@ -30,9 +30,8 @@ class Chat extends Component {
     this.ws.onclose = () => {
       console.log('disconnected')
       // automatically try to reconnect on connection loss
-      this.setState({
-        ws: new WebSocket(HOST),
-      })
+      this.ws = new WebSocket(HOST);
+     
     }
   }
 
