@@ -1,9 +1,16 @@
 const WebSocket = require('ws');
 var express = require('express');
 var app = express();
-
+const path = require('path');
 //setting middleware
-app.use(express.static(__dirname + 'frontend/public/')); //Serves resources from public folder
+app.use(express.static('frontend/build'));
+
+// Express serve up index.html file if it doesn't recognize route
+
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+});
+// app.use(express.static(__dirname + 'frontend/public/')); //Serves resources from public folder
 
 
 var server = app.listen(process.env.PORT || 5000);
