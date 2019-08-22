@@ -12,7 +12,7 @@ class Chat extends Component {
     messages: [],
   }
    
-  ws = new WebSocket(Host)
+  ws = new WebSocket(HOST)
 
   componentDidMount() {
     console.log(window.location);
@@ -31,7 +31,7 @@ class Chat extends Component {
       console.log('disconnected')
       // automatically try to reconnect on connection loss
       this.setState({
-        ws: new WebSocket(URL),
+        ws: new WebSocket(HOST),
       })
     }
   }
