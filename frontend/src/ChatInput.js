@@ -17,6 +17,7 @@ class ChatInput extends Component {
           this.setState({ message: '' })
         }}
       >
+        <span>Message:  </span>
         <input
           type="text"
           placeholder={'Enter message...'}
